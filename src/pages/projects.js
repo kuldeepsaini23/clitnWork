@@ -9,7 +9,8 @@ import project1 from "../../public/images/projects/crypto-screener-cover-image.j
 
 const FeaturedProjects = ({ type, title, summary, img, link, github }) => {
   return (
-    <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12">
+    <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 relative rounded-br-2xl">
+      <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl"></div>
       <Link
         href={link}
         target="_blank"
@@ -50,6 +51,7 @@ const FeaturedProjects = ({ type, title, summary, img, link, github }) => {
 const Project = ({ title, type, img, link, github }) => {
   return (
     <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative">
+      <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark "></div>
       <Link
         href={link}
         target="_blank"
@@ -97,10 +99,10 @@ const projects = () => {
       </Head>
       <main className="flex items-center justify-center flex-col w-full mb-16">
         <Layout>
-          <AnimatedText text="Imagine Trumps Knowledge!" />
+          <AnimatedText text="Imagine Trumps Knowledge!" className="mb-16"/>
 
           {/* Project layouts */}
-          <div className="grid grid-cols-12 gap-24">
+          <div className="grid grid-cols-12 gap-24 gap-y-32">
             {/* Featured post */}
             <div className="col-span-12">
               <FeaturedProjects
