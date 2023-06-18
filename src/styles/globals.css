@@ -1,3 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  @layer utilities {
+    .glow {
+      @apply rounded-full overflow-hidden;
+      background-color: #ffd700;
+      box-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ffd700, 0 0 60px #ffd700, 0 0 70px #ffd700;
+    }
+  }
+  
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -104,4 +118,25 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+
+/* custom scrollbar */
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000814;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:#838894;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #F1F2FF;
 }
