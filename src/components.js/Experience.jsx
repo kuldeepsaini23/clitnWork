@@ -5,7 +5,7 @@ import LiIcon from "./LiIcon";
 const Details = ({ position, company, companyLink, time, address, work }) => {
   const ref = useRef(null)
   return (
-    <li ref={ref} className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between">
+    <li ref={ref} className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between dark:text-light">
       <LiIcon reference={ref}/>
       <motion.div initial={{y:50}} whileInView={{y:0}} transition={{duration:0.5, type:"spring"}}>
         <h3 className="capitalize font-bold text-2xl">
@@ -13,12 +13,12 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
           <a
             href={companyLink}
             target="_blank"
-            className="text-primary capitalize"
+            className="text-primary capitalize dark:text-primaryDark"
           >
             {company}
           </a>
         </h3>
-        <spn className="capitalize font-medium text-dark/75">
+        <spn className="capitalize font-medium text-dark/75 dark:text-light/75">
           {time} | {address}
         </spn>
         <p className="font-medium w-full">{work}</p>
@@ -37,14 +37,14 @@ const Experience = () => {
 
   return (
     <div className="my-64">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center">
+      <h2 className="font-bold text-8xl mb-32 w-full text-center dark:text-light">
         Experience
       </h2>
 
       {/*  */}
       <div className="w-[75%] mx-auto relative" ref={ref}>
         <motion.div
-          className="absolute left-9 top-[2px] w-[4px] h-full bg-dark origin-top"
+          className="absolute left-9 top-[2px] w-[4px] h-full bg-dark origin-top dark:bg-primaryDark"
           style={{ scaleY: scrollYProgress }}
         />
         <ul className="w-full flex flex-col items-start justify-between">
