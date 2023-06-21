@@ -3,7 +3,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
 import { motion, useScroll } from "framer-motion";
-import { MoonIcon, SunIcon, TwitterIcon } from "./Icons";
+import { DribbbleIcon, GithubIcon, LinkedInIcon, MoonIcon, SunIcon, TwitterIcon } from "./Icons";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
 
 const CustomLink = ({ href, title, className = "" }) => {
@@ -218,7 +218,7 @@ const Navbar = () => {
               className="w-6 mx-3 sm:mx-1"
               whileTap={{ scale: 0.9 }}
             >
-              <TwitterIcon />
+              <DribbbleIcon />
             </motion.a>
 
             <motion.a
@@ -228,7 +228,7 @@ const Navbar = () => {
               className="w-6 mx-3 sm:mx-1"
               whileTap={{ scale: 0.9 }}
             >
-              <TwitterIcon />
+              <LinkedInIcon />
             </motion.a>
 
             <motion.a
@@ -238,7 +238,7 @@ const Navbar = () => {
               className="w-6 ml-3 sm:mx-1" 
               whileTap={{ scale: 0.9 }}
             >
-              <TwitterIcon />
+              <GithubIcon />
             </motion.a>
 
             {/* Dark and light mode Button */}

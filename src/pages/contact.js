@@ -45,7 +45,7 @@ const contact = () => {
       <TransitionEffect/>
       <main className="flex w-full flex-col items-center justify-center">
         <Layout className="pt-16 flex justify-center items-center flex-col">
-          <AnimatedText text="Contact Me" className="mb-16 xl:!text-5xl lg:!text-6xl md:!text-6xl sm:!text-4xl md:my-5"/>
+          <AnimatedText text="Contact Me" className="mb-16 lg:!text-7xl md:!text-5xl sm:!text-4xl md:my-5"/>
           <motion.div className="w-[60%] lg:w-full" variants={quote} initial="initial" whileInView="animate">
             <motion.div className="border border-dark text-dark dark:text-light dark:border-light rounded-xl lg:p-7 p-14 flex gap-3 flex-col"
             variants={singleWord}>
