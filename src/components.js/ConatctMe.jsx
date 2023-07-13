@@ -1,78 +1,72 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import CountryCode from "../data/countrycode.json";
-import { motion } from "framer-motion";
-
-
-const quote = {
-  initial:{
-    opacity:1,
-  },
-  animate:{
-    opacity:1,
-    transition:{
-      delay:0.5,
-      staggerChildren:0.08,
-    }
-  }
-}
-
-
-const singleWord = {
-  initial:{
-    opacity:0,
-    y:50,
-  },
-  animate:{
-    opacity:1,
-    y:0,
-    transition:{
-      duration:1,
-    }
-  }
-}
+import emailJs from "@emailjs/browser";
+import { toast } from "react-hot-toast";
 
 const ContactMe = () => {
-
   const {
     register,
     handleSubmit,
-    reset,
+    setValue,
     formState: { errors, isSubmitSuccessful },
   } = useForm();
 
   const submitContactForm = async (data) => {
-  
-    const { countrycode, email, firstName, lastaName, message, phoneNo } = data;
+    const { countrycode, email, firstName, lastName, message, phoneNo } = data;
 
-    
+    const toastId = toast.loading("Loading...")
+    emailJs.send(
+        "service_kh126n8",
+        "template_ka5nqeq",
+        {
+          from_name: `${firstName} ${lastaName}`,
+          to_name: "Diago",
+          email_id: email,
+          message: `<h1>Message Received</h1>
+          <p>${countrycode} - ${phoneNo}</p>
+          <p>${message}</p>
+        `,
+        },
+        "Lr3ymNFSZg_9lhZmA"
+      )
+      .then(() => {
+        toast.success("Message Sent Successfully!!");
+        setValue("email","")
+        setValue("firstName","")
+        setValue("lastName","")
+        setValue("phoneNo","")
+        setValue("message","")
+      })
+      .catch((error) => {
+        toast.error("Something Went Wrong.");
+        setValue("email","")
+        setValue("firstName","")
+        setValue("lastName","")
+        setValue("phoneNo","")
+        setValue("message","")
+      });
+
+      toast.dismiss(toastId);
   };
 
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      if(loading === false ){
-        reset({
-          email: "",
-          firstName: "",
-          lastaName: "",
-          message: "",
-          phoneNo: "",
-        });
-      }
-      
-    }
-  }, [reset, isSubmitSuccessful]);
 
   return (
-    <motion.form
+    <form
       onSubmit={handleSubmit(submitContactForm)}
-      className="flex flex-col gap-7 text-dark dark:text-light"
-      variants={quote} initial="initial" whileInView="animate"
+      className="flex flex-col gap-7"
+      // variants={quote} initial="initial" whileInView="animate"
     >
-      <motion.div className="flex lg:flex-col gap-5 flex-row" variants={singleWord}>
+      <div
+        className="flex lg:flex-col gap-5 flex-row"
+        // variants={singleWord}
+      >
         {/* First Name */}
         <div className="flex flex-col gap-2 w-[48%] lg:w-full">
-          <label htmlFor="firstName" className="lable-style dark:text-light md:text-xs">
+          <label
+            htmlFor="firstName"
+            className="lable-style dark:text-light md:text-xs"
+          >
             First Name<sup className="text-pink-700">*</sup>
           </label>
           <input
@@ -81,10 +75,10 @@ const ContactMe = () => {
             id="firstName"
             placeholder="Enter First Name"
             {...register("firstName", { required: true })}
-            className="form-style md:text-xs"
+            className="form-style md:text-xs text-light"
           />
           {errors.firstName && (
-            <span className="-mt-1 text-[12px] text-yellow-400">
+            <span className="-mt-1 text-[12px] text-pink-600 font-bold">
               Please enter your First name.
             </span>
           )}
@@ -92,24 +86,30 @@ const ContactMe = () => {
 
         {/* Last Name */}
         <div className="flex flex-col gap-2 w-[48%] lg:w-full">
-          <label htmlFor="lastaName" className="lable-style dark:text-light md:text-xs">
+          <label
+            htmlFor="lastName"
+            className="lable-style dark:text-light md:text-xs"
+          >
             Last Name{" "}
           </label>
           <input
             type="text"
-            name="lastaName"
-            id="lastaName"
+            name="lastName"
+            id="lastName"
             placeholder="Enter Last Name"
-            {...register("lastaName")}
-            className="form-style md:text-xs"
+            {...register("lastName")}
+            className="form-style md:text-xs text-light"
           />
           {/* Not mandatory so no erro is shown */}
         </div>
-      </motion.div>
+      </div>
 
       {/*Email*/}
-      <motion.div className="flex flex-col gap-2" variants={singleWord}>
-        <label htmlFor="email" className="lable-style dark:text-light md:text-xs">
+      <div className="flex flex-col gap-2">
+        <label
+          htmlFor="email"
+          className="lable-style dark:text-light md:text-xs"
+        >
           Email<sup className="text-pink-700">*</sup>
         </label>
         <input
@@ -118,19 +118,22 @@ const ContactMe = () => {
           id="email"
           placeholder="Enter Email Address"
           {...register("email", { required: true })}
-          className="form-style md:text-xs"
+          className="form-style md:text-xs text-light"
         />
         {errors.email && (
-          <span className="-mt-1 text-[12px] text-yellow-400">
+          <span className="-mt-1 text-[12px] text-pink-600 font-bold">
             Please enter your Email Address.
           </span>
         )}
-      </motion.div>
+      </div>
 
       {/* /* Country Code and Phone no */}
 
-      <motion.div className="flex flex-col gap-2" variants={singleWord}>
-        <label className="lable-style dark:text-light md:text-xs" htmlFor="phonenumber">
+      <div className="flex flex-col gap-2">
+        <label
+          className="lable-style dark:text-light md:text-xs"
+          htmlFor="phonenumber"
+        >
           <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem] lable-style dark:text-light md:text-xs">
             Phone Number<sup className="text-pink-700">*</sup>
           </p>
@@ -147,7 +150,11 @@ const ContactMe = () => {
             >
               {CountryCode.map((element, index) => {
                 return (
-                  <option key={index} value={element.code} className="xs:text-[7px]">
+                  <option
+                    key={index}
+                    value={element.code}
+                    className="xs:text-[7px]"
+                  >
                     {element.code} -{element.country}
                   </option>
                 );
@@ -162,7 +169,7 @@ const ContactMe = () => {
               name="phonenumber"
               id="phonenumber"
               placeholder="12345 67890"
-              className="form-style md:text-xs"
+              className="form-style md:text-xs text-light"
               {...register("phoneNo", {
                 required: {
                   value: true,
@@ -175,15 +182,18 @@ const ContactMe = () => {
           </div>
         </div>
         {errors.phoneNo && (
-          <span className="-mt-1 text-[12px] text-yellow-400">
+          <span className="-mt-1 text-[12px] text-pink-600 font-bold">
             {errors.phoneNo.message}
           </span>
         )}
-      </motion.div>
+      </div>
 
       {/*Message*/}
-      <motion.div className="flex flex-col gap-2" variants={singleWord}>
-        <label htmlFor="message" className="lable-style dark:text-light md:text-xs">
+      <div className="flex flex-col gap-2">
+        <label
+          htmlFor="message"
+          className="lable-style dark:text-light md:text-xs"
+        >
           Message<sup className="text-pink-700">*</sup>
         </label>
         <textarea
@@ -193,24 +203,23 @@ const ContactMe = () => {
           rows="7"
           placeholder="Enter Your Message Here..."
           {...register("message", { required: true })}
-          className="form-style md:text-xs"
+          className="form-style md:text-xs text-light"
         />
         {errors.message && (
-          <span className="-mt-1 text-[12px] text-yellow-400">
+          <span className="-mt-1 text-[12px] text-pink-600 font-bold">
             Please enter your Message
           </span>
         )}
-      </motion.div>
+      </div>
 
-      <motion.button
+      <button
         type="submit"
-        className="rounded-md bg-yellow-400 px-6 py-3 text-center text-[13px] font-medium text-dark shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)] transition-all duration-200 hover:scale-95 hover:shadow-none  disabled:bg-richblack-500 sm:text-[16px] dark:text-light"
-        variants={singleWord}
+        className="rounded-md bg-yellow-400 px-6 py-3 text-center text-[13px] text-lime-100 shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)] transition-all duration-200 hover:scale-95 hover:shadow-none  disabled:bg-richblack-500 sm:text-[16px] dark:text-dark font-bold"
       >
         {/* {loading ? "Sending..." : "Send Message"} */}
         Send Message
-      </motion.button>
-    </motion.form>
+      </button>
+    </form>
   );
 };
 

@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
+import image1 from "../../public/images/Testimonials/test1.jpg"
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -12,11 +13,11 @@ import ReactStars from "react-rating-stars-component";
 
 const Data = [
   {
-    img: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg",
-    name: "Maria Kate",
-    profession: "Photographer",
+    img: "https://i.ibb.co/PDYyJtR/test1.jpg",
+    name: "ItsJustTie",
+    profession: "Youtuber",
     description:
-      "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Namsed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisi viverra.",
+      "I'm ngl your editing has doubled my views and allowed be to focus more on the content to create something I'm truly be becoming proud of",
     value: 4,
   },
   {

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { DribbbleIcon, GithubIcon, LinkedInIcon, MoonIcon, SunIcon, TwitterIcon } from "./Icons";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
+import {AiFillInstagram} from "react-icons/ai"
+import {BsFacebook} from "react-icons/bs"
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -90,7 +92,7 @@ const Navbar = () => {
 
         <nav className="flex items-center justify-center flex-wrap">
           <motion.a
-            href=""
+            href="https://twitter.com/fx_diago"
             target={"_blank"}
             whileHover={{ y: -2 }}
             className="w-6 mr-3"
@@ -100,44 +102,35 @@ const Navbar = () => {
           </motion.a>
 
           <motion.a
-            href=""
+            href="https://www.linkedin.com/in/dhruv-lakhera-23145226a"
             target={"_blank"}
             whileHover={{ y: -2 }}
             className="w-6 mx-3"
             whileTap={{ scale: 0.9 }}
           >
-            <TwitterIcon />
+            <LinkedInIcon />
           </motion.a>
 
           <motion.a
-            href=""
+            href="https://www.instagram.com/diagofx_"
             target={"_blank"}
             whileHover={{ y: -2 }}
             className="w-6 mx-3"
             whileTap={{ scale: 0.9 }}
           >
-            <TwitterIcon />
+            <AiFillInstagram className="text-3xl text-[#E1306C]"/>
           </motion.a>
 
           <motion.a
-            href=""
+            href="https://www.facebook.com/fxdiago"
             target={"_blank"}
             whileHover={{ y: -2 }}
             className="w-6 mx-3"
             whileTap={{ scale: 0.9 }}
           >
-            <TwitterIcon />
+            <BsFacebook className="text-[#3b5998] text-3xl"/>
           </motion.a>
 
-          <motion.a
-            href=""
-            target={"_blank"}
-            whileHover={{ y: -2 }}
-            className="w-6 ml-3"
-            whileTap={{ scale: 0.9 }}
-          >
-            <TwitterIcon />
-          </motion.a>
 
           {/* Dark and light mode Button */}
           <button

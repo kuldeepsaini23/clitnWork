@@ -7,13 +7,12 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import { GithubIcon } from "@/components.js/Icons";
-import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
+import project1 from "../../public/images/projects/Paypal.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// import required modules
+import {BsYoutube} from "react-icons/bs"
 import { Mousewheel, Autoplay, Pagination, Navigation } from "swiper";
 import TransitionEffect from "@/components.js/TransitionEffect";
 import VideoPlayer from "@/components.js/VideoPlayer";
@@ -77,15 +76,16 @@ const FeaturedProjects = ({ type, title, summary, img, link, github }) => {
 const Project = ({ title, type, img, link, github }) => {
   const [videoPlayer, setVideoPlayer] = useState(null);
   return (
-    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light dark:dark:text-light xs:p-4 
-    max-h-maxContent">
+    <article
+      className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light dark:dark:text-light xs:p-4 min-h-[400px]"
+    >
       <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light"></div>
       <Link
         href={link}
         target="_blank"
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
-         <Image
+        <Image
           src={img}
           alt={title}
           width={800}
@@ -105,29 +105,24 @@ const Project = ({ title, type, img, link, github }) => {
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl ">
+          <h2 className="my-2 w-full text-left text-2xl font-bold lg:text-2xl ">
             {title}
           </h2>
         </Link>
 
         {/* <p className="my-2 font-medium text-dark">{summary}</p> */}
 
-        <div className="w-full mt-2 flex items-center justify-between">
-          <Link
-            href={link}
-            target="_blank"
-            className="ml-4 rounded-lg p-2 px-6 text-lg font-semibold hover:underline sm:text-lg"
+      
+          <button
+            className="flex items-center justify-center w-full gap-3 px-7 py-4 border border-dark dark:border-light btn-pink font-bold"
+            onClick={() => setVideoPlayer(true)}
           >
-            Visit
-          </Link>
-          <button className="w-8 sm:w-6" onClick={() => setVideoPlayer(github)}>
-            {" "}
-            <GithubIcon />{" "}
+            <BsYoutube className="text-2xl"/>Watch
           </button>
-        </div>
+
       </div>
       {videoPlayer && (
-        <VideoPlayer link={videoPlayer} setVideoPlayer={setVideoPlayer} />
+        <VideoPlayer link={link} setVideoPlayer={setVideoPlayer} />
       )}
     </article>
   );
@@ -146,9 +141,9 @@ const projects = () => {
 
   const setMyCards = (value) => {
     setActiveMenu(value);
-    if(value === "All"){
-      setCardsData(clientWorks)
-    }else{
+    if (value === "All") {
+      setCardsData(clientWorks);
+    } else {
       const result = clientWorks.filter((element) => element.tag === value);
       setCardsData(result);
     }
@@ -169,7 +164,7 @@ const projects = () => {
           />
 
           {/* Project layouts */}
-          <div className="md:w-[90vw] grid grid-cols-12 gap-x-24 xl:gap-x-16 lg:gap-x-8 sm:gap-x-0">
+          <div className="md:w-[80vw] grid grid-cols-12 gap-x-24 xl:gap-x-16 lg:gap-x-8 sm:gap-x-0">
             {/* Featured post */}
             <Swiper
               direction={"horizontal"}
@@ -213,13 +208,14 @@ const projects = () => {
               </SwiperSlide>
             </Swiper>
             {/* Menu Section */}
-            <div className="col-span-12 mx-auto w-max bg-dark text-light p-1 rounded-lg font-medium drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] flex flex-row gap-5 md:flex-col justify-center items-center dark:bg-white dark:text-dark dark:font-bold mt-40 mb-14 md:mb-0 md:mt-20"  
-            >
+            <div className="col-span-12 mx-auto w-max bg-dark text-light p-1 rounded-lg font-medium drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] flex flex-row gap-5 md:flex-col justify-center items-center dark:bg-white dark:text-dark dark:font-bold mt-40 mb-14 md:mb-0 md:mt-20">
               {["All", "Motion Designer", "Youtube Video"].map(
                 (element, index) => (
                   <div
                     className={`text-[16px] col-span-4 rounded-lg transition-all duration-200 cursor-pointer hover:bg-light hover:text-dark px-7 py-2 dark:hover:text-light dark:hover:bg-dark ${
-                      activeMenu === element ? "bg-white text-dark dark:text-light dark:bg-dark" : ""
+                      activeMenu === element
+                        ? "bg-white text-dark dark:text-light dark:bg-dark"
+                        : ""
                     }`}
                     key={index}
                     onClick={() => setMyCards(element)}
@@ -229,31 +225,32 @@ const projects = () => {
                 )
               )}
             </div>
-             {/* Other posts */}
-         
-              <AnimatePresence initial={false} mode="wait">
-                {cardsData.map((data, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.5 }}
-                    transition={{ delay: 0.5, type: shouldReduceMotion ? "tween" : "spring" }}
-                    layout
-                    className="col-span-4 md:col-span-12 md:mt-10 mb-10 "
-                  >
-                    <Project
-                      title={data.title}
-                      img={data.img}
-                      link={data.link}
-                      github={data.github}
-                      type={data.type}
-                    />
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-   
-           
+            {/* Other posts */}
+
+            <AnimatePresence initial={false} mode="wait">
+              {cardsData.map((data, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.5 }}
+                  transition={{
+                    delay: 0.5,
+                    type: shouldReduceMotion ? "tween" : "spring",
+                  }}
+                  layout
+                  className="col-span-4 md:col-span-12 xl:col-span-6 md:mt-10 mb-10 place-content-center place-items-center"
+                >
+                  <Project
+                    title={data.title}
+                    img={data.img}
+                    link={data.link}
+                    github={data.github}
+                    type={data.type}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         </Layout>
       </main>

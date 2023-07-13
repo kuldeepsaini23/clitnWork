@@ -1,7 +1,7 @@
 import React from "react";
 
 const VideoPlayer = ({ link, setVideoPlayer }) => {
-  console.log(link,"and", setVideoPlayer)
+  console.log(link)
   return (
     <div
       className="fixed inset-0 z-[1000] !mt-0 grid place-items-center overflow-auto bg-dark bg-opacity-10 w-screen backdrop-blur"

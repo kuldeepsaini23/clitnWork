@@ -10,31 +10,31 @@ import Experience from "@/components.js/Experience";
 import Education from "@/components.js/Education";
 import TransitionEffect from "@/components.js/TransitionEffect";
 
-const AnimatedNumber=({value})=>{
+const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
 
   const motionvalue = useMotionValue(0);
 
-  const springValue = useSpring(motionvalue, {duration:3000})
+  const springValue = useSpring(motionvalue, { duration: 3000 });
 
-  const isInView = useInView(ref, {once:true});
+  const isInView = useInView(ref, { once: true });
 
-  useEffect(()=>{
-    if(isInView){
+  useEffect(() => {
+    if (isInView) {
       motionvalue.set(value);
     }
-  },[isInView, value, motionvalue])
+  }, [isInView, value, motionvalue]);
 
-  useEffect(()=>{
-    springValue.on("change", (latest)=>{
-      if(ref.current && latest.toFixed(0)<= value){
+  useEffect(() => {
+    springValue.on("change", (latest) => {
+      if (ref.current && latest.toFixed(0) <= value) {
         ref.current.textContent = latest.toFixed(0);
       }
-    })
-  },[springValue, value])
-   
-  return <span ref={ref}></span>
-}
+    });
+  }, [springValue, value]);
+
+  return <span ref={ref}></span>;
+};
 
 const About = () => {
   return (
@@ -43,11 +43,14 @@ const About = () => {
         <title>About Page</title>
         <meta name="description" content="my description" />
       </Head>
-      <TransitionEffect/>
+      <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center">
         <Layout className="pt-16">
           {/* Heading */}
-          <AnimatedText text="Passion Fuels Purpose!" className="my-10 !text-6xl lg:!text-7xl md:!text-6xl sm:!text-5xl"/>
+          <AnimatedText
+            text="Passion Fuels Purpose!"
+            className="my-10 !text-6xl lg:!text-7xl md:!text-6xl sm:!text-5xl"
+          />
 
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
             {/* Myself */}
@@ -55,25 +58,35 @@ const About = () => {
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
                 Biography
               </h2>
-              <p className="font-medium">
-                Hi, I'm CodeBucks, a web developer and UI/UX designer with a
-                passion for creating beautiful, functional, and user-centered
-                digital experiences. With 4 years of experience in the field. I
-                am always looking for new and innovative ways to bring my
-                clients' visions to life.
-              </p>
-              <p className="my-4 font-medium">
-                I believe that design is about more than just making things look
-                pretty – it's about solving problems and creating intuitive,
-                enjoyable experiences for users.{" "}
-              </p>
 
               <p className="font-medium">
-                Whether I'm working on a website, mobile app, or other digital
-                product, I bring my commitment to design excellence and
-                user-centered thinking to every project I work on. I look
-                forward to the opportunity to bring my skills and passion to
-                your next project.
+                In today's digital age, visual storytelling has become a
+                powerful tool to captivate audiences and leave a lasting
+                impression. As a skilled video editor with a passion for
+                transforming ordinary footage into extraordinary narratives, I
+                wanted to offer you my expertise in enhancing your content and
+                bringing your vision to life.
+              </p>
+              <p className="my-4 font-medium">
+                Hi there! My name is Dhruv Lakhera, also known as "DIAGO". I'm a
+                professional video editor/content editor and motion designer. I
+                have been editing from past more than 4 years and did many
+                client works throughout my journey from editing gaming
+                montages/highlights to vlog editing and making motion graphics
+                commercial ads for companies having turn over of $100k. I was
+                born in Dehradun and currently i'm living in Dehradun a state
+                capital of Uttarakhand in INDIA.
+              </p>
+              <p className="font-medium">
+                Having so much of experience i have a content editing agency
+                where we have hired top best editors around the world and now
+                we're on a mission to help and grow youtube channel and
+                businesses all the way from beginners to big/famous youtubers.
+                Our videos will provide you the best results as we also know
+                content marketing of video while editing it as the engagement of
+                the video increases by a very good percentage. I hope that this
+                message finds you well and we expect from you and your business
+                to grow more. Contact us right now to get started....
               </p>
             </div>
 
@@ -92,39 +105,42 @@ const About = () => {
             {/* Client Data */}
             <div className="col-span-2 flex flex-col items-center justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3">
               <div className="flex flex-col items-end justify-center xl:items-center">
-                <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl"><AnimatedNumber value={50}/>+</span>
+                <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl">
+                  <AnimatedNumber value={50} />+
+                </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:tex-lg sm:text-base xs:text-sm">
                   satisfied Client
                 </h2>
               </div>
 
               <div className="flex flex-col items-end justify-center xl:items-center">
-                <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl"><AnimatedNumber value={40}/>+</span>
+                <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl">
+                  <AnimatedNumber value={40} />+
+                </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:tex-lg sm:text-base xs:text-sm">
                   projects completed
                 </h2>
               </div>
 
               <div className="flex flex-col items-end justify-center xl:items-center">
-                <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl"><AnimatedNumber value={4}/>+</span>
+                <span className="inline-block text-7xl font-bold dark:text-light md:text-6xl sm:text-5xl xs:text-4xl">
+                  <AnimatedNumber value={4} />+
+                </span>
                 <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:tex-lg sm:text-base xs:text-sm">
                   years of experience
                 </h2>
               </div>
-              
             </div>
-
           </div>
 
           {/* Skills Section */}
-          <Skills/>
+          <Skills />
 
           {/* Experience component */}
-          <Experience/>
+          <Experience />
 
           {/* Education */}
-          <Education/>
-
+          {/* <Education /> */}
         </Layout>
       </main>
     </div>
