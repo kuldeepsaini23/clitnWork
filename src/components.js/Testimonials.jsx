@@ -4,16 +4,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
+import test1 from "../../public/images/Testimonials/test1.jpg"
+import test3 from "../../public/images/Testimonials/Test3.jpeg"
 
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 import ReactStars from "react-rating-stars-component";
+import Image from "next/image";
 
 const Data = [
   {
-    img: "https://i.ibb.co/PDYyJtR/test1.jpg",
+    img: test1,
     name: "ItsJustTie",
     profession: "Youtuber",
     description:
@@ -21,7 +24,7 @@ const Data = [
     value: 4,
   },
   {
-    img: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg",
+    img:test1,
     name: "Mutants Gym",
     profession: "Youtber",
     description:
@@ -29,11 +32,11 @@ const Data = [
     value: 5,
   },
   {
-    img: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg",
+    img: test3,
     name: "Kuldeep Saini",
     profession: "Web Developer",
     description:
-      "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Namsed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisi viverra.",
+      "I am very happy to share, I am genuienly impress from the work of Diago. He also delivered my project on time.",
     value: 4,
   },
   
@@ -55,7 +58,7 @@ const Testimonials = () => {
         }}
         centeredSlides={true}
         autoplay={{
-          delay: 1000000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         modules={[ Pagination, Autoplay, Navigation]}
@@ -65,8 +68,8 @@ const Testimonials = () => {
           return (
             <SwiperSlide className="lg:w-5/12 min-w-[200px]" key={index}>
               <div className="flex flex-col gap-y-5 items-center justify-center border-solid border-[2px] border-dark dark:border-light w-[80%] mx-auto rounded-3xl my-4 py-4 md:w-full md:py-0">
-                <img
-                  className="mx-auto mb-6 rounded-full shadow-lg dark:shadow-black/20 w-[150px] md:w-[120px] sm:w-[80px]"
+                <Image
+                  className="mx-auto mb-6 rounded-full shadow-lg dark:shadow-black/20 w-[150px] md:w-[120px] sm:w-[80px] h-[150px] md:h-[120px] sm:h-[80px]"
                   src={item.img}
                   alt="avatar"
                 />
