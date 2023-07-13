@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
-import image1 from "../../public/images/Testimonials/test1.jpg"
+
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -22,36 +22,21 @@ const Data = [
   },
   {
     img: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg",
-    name: "Maria Kate",
-    profession: "Photographer",
+    name: "Mutants Gym",
+    profession: "Youtber",
     description:
-      "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Namsed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisi viverra.",
-    value: 3,
-  },
-  {
-    img: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg",
-    name: "Maria Kate",
-    profession: "Photographer",
-    description:
-      "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Namsed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisi viverra.",
+      "The Mutants gym intro blew me away! Its dynamic motion design perfectly captures the raw energy and strength of the gym. It's an electrifying start that fuels my motivation every time!",
     value: 5,
   },
   {
     img: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg",
-    name: "Maria Kate",
-    profession: "Photographer",
+    name: "Kuldeep Saini",
+    profession: "Web Developer",
     description:
       "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Namsed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisi viverra.",
-    value: 2,
+    value: 4,
   },
-  {
-    img: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg",
-    name: "Maria Kate",
-    profession: "Photographer",
-    description:
-      "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Namsed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisi viverra.",
-    value: 5,
-  },
+  
 ];
 
 const Testimonials = () => {

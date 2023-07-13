@@ -56,18 +56,13 @@ const FeaturedProjects = ({ type, title, summary, img, link, github }) => {
           {summary}
         </p>
 
-        <div className="mt-2 flex items-center">
-          <Link href={github} target="_blank" className="w-10">
-            <GithubIcon />
-          </Link>
-          <Link
-            href={link}
-            target="_blank"
-            className="ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark sm:px-4 sm:text-base"
+ 
+        <button
+            className="flex items-center justify-center w-full gap-3 px-7 py-4 border border-dark dark:border-light btn-pink font-bold"
+            onClick={() => setVideoPlayer(true)}
           >
-            Visit Project
-          </Link>
-        </div>
+            <BsYoutube className="text-2xl"/>Watch
+          </button>
       </div>
     </article>
   );
@@ -179,7 +174,7 @@ const projects = () => {
               }}
               centeredSlides={true}
               autoplay={{
-                delay: 2500,
+                delay: 5000,
                 disableOnInteraction: false,
               }}
               modules={[Mousewheel, Pagination, Autoplay, Navigation]}
@@ -187,11 +182,10 @@ const projects = () => {
             >
               <SwiperSlide>
                 <FeaturedProjects
-                  title="Crypto Screener Application"
+                  title="PAYPAL MOTION DESIGN INTRO"
                   img={project1}
-                  summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
+                  summary="Experience the seamless convenience of PayPal with our captivating motion design video. Delight in the fluid animations, vibrant colors, and dynamic visuals that illustrate how PayPal simplifies your online transactions, making it easier than ever to pay, shop, and send money securely."
                   link="/"
-                  github="/"
                   type="Featured Project"
                 />
               </SwiperSlide>
