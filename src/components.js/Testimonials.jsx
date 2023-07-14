@@ -4,9 +4,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
-import test1 from "../../public/images/Testimonials/Test1.jpg"
-import test2 from "../../public/images/Testimonials/Test2.png"
-import test3 from "../../public/images/Testimonials/Test3.jpeg"
+import test1 from "/public/images/Testimonials/Test1.jpg"
+import test2 from "/public/images/Testimonials/Test2.png"
+import test3 from "/public/images/Testimonials/Test3.jpeg"
 
 
 // import required modules
