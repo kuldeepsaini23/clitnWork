@@ -4,7 +4,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
-import test1 from "../../public/images/Testimonials/test1.jpg"
+import test1 from "../../public/images/Testimonials/Test1.jpg"
+import test2 from "../../public/images/Testimonials/Test2.png"
 import test3 from "../../public/images/Testimonials/Test3.jpeg"
 
 
@@ -24,7 +25,7 @@ const Data = [
     value: 4,
   },
   {
-    img:test1,
+    img:test2,
     name: "Mutants Gym",
     profession: "Youtber",
     description:
