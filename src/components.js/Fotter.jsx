@@ -16,7 +16,7 @@ const Fotter = () => {
           <Link
             href="https://www.linkedin.com/feed/"
             className="underline underline-offset-2 dark:text-primaryDark"
-            target="_blank"
+            target={"_blank"}
           >
             Kuldeep Saini
           </Link>

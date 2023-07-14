@@ -1,12 +1,12 @@
-import paypal from "../../public/images/projects/Paypal.png"
-import business from "../../public/images/projects/Business.png"
-import monster from "../../public/images/projects/Monster.png"
-import redbull from "../../public/images/projects/Redbull.png"
-import fix from "../../public/images/projects/Fix.png"
-import design from "../../public/images/projects/Design.png"
-import fifa from "../../public/images/projects/Fifa.png"
-import before from "../../public/images/projects/BandA.png"
-import knowledge from "../../public/images/projects/Knowledge.png"
+import paypal from "/public/images/projects/Paypal.png"
+import business from "/public/images/projects/Business.png"
+import monster from "/public/images/projects/Monster.png"
+import redbull from "/public/images/projects/Redbull.png"
+import fix from "/public/images/projects/Fix.png"
+import design from "/public/images/projects/Design.png"
+import fifa from "/public/images/projects/Fifa.png"
+import before from "/public/images/projects/BandA.png"
+import knowledge from "/public/images/projects/Knowledge.png"
 
 
 export const clientWorks = [

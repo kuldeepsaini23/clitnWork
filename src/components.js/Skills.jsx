@@ -27,27 +27,27 @@ const Skills = () => {
           className="flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8 shadow-dark dark:text-dark dark:bg-light dark:shadow-light lg:p-6 md:p-4 xs:text-xs xs:p-2"
           whileHover={{ scale: 1.05 }}
         >
-          Motion
+          Video Editing
         </motion.div>
-        <Skill name="Html" x="-20vw" y="2vw" />
+        <Skill name="Motion Designer" x="-20vw" y="2vw" />
 
-        <Skill name="Css" x="-5vw" y="-10vw" />
+        <Skill name="Typography" x="-5vw" y="-10vw" />
 
-        <Skill name="Javascript" x="20vw" y="6vw" />
+        <Skill name="3d elements" x="20vw" y="6vw" />
 
-        <Skill name="ReactJs" x="0vw" y="12vw" />
+        <Skill name="Audio editing" x="0vw" y="12vw" />
 
-        <Skill name="NextJs" x="-20vw" y="-15vw" />
+        <Skill name="sfx" x="-20vw" y="-15vw" />
 
-        <Skill name="GatsbyJs" x="15vw" y="-12vw" />
+        <Skill name="effects" x="15vw" y="-12vw" />
 
-        <Skill name="Web Design" x="32vw" y="-5vw" />
-
-        <Skill name="Figma" x="0vw" y="-20vw" />
+        {/* <Skill name="" x="32vw" y="-5vw" />
+    
+        <Skill name="" x="0vw" y="-20vw" />
 
         <Skill name="Firebase" x="-25vw" y="18vw" />
 
-        <Skill name="Tailwind CSS" x="18vw" y="18vw" />
+        <Skill name="Tailwind CSS" x="18vw" y="18vw" /> */}
       </div>
     </div>
   );

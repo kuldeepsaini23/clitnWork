@@ -2,12 +2,12 @@ import AnimatedText from "@/components.js/AnimatedText";
 import Layout from "@/components.js/Layout";
 import Head from "next/head";
 import React, { useEffect, useRef } from "react";
-import profilePic from "../../public/images/profile/developer-pic-2.jpg";
-import Image from "next/image";
+// import profilePic from "../../public/images/profile/developer-pic-2.jpg";
+// import Image from "next/image";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Skills from "@/components.js/Skills";
 import Experience from "@/components.js/Experience";
-import Education from "@/components.js/Education";
+// import Education from "@/components.js/Education";
 import TransitionEffect from "@/components.js/TransitionEffect";
 
 const AnimatedNumber = ({ value }) => {
@@ -54,7 +54,7 @@ const About = () => {
 
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
             {/* Myself */}
-            <div className="col-span-3 flex flex-col items-start justify-start text-dark/75 dark:text-light/75 xl:col-span-4 md:order-2 md:col-span-8">
+            <div className="col-span-6 flex flex-col items-start justify-start text-dark/75 dark:text-light/75 xl:col-span-8 md:order-2 md:col-span-8">
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
                 Biography
               </h2>
@@ -91,7 +91,7 @@ const About = () => {
             </div>
 
             {/* Middle part Image*/}
-            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 xl:col-span-4 md:order-1 md:col-span-8 dark:border-light dark:bg-dark">
+            {/* <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 xl:col-span-4 md:order-1 md:col-span-8 dark:border-light dark:bg-dark">
               <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light"></div>
               <Image
                 src={profilePic}
@@ -100,7 +100,7 @@ const About = () => {
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-            </div>
+            </div> */}
 
             {/* Client Data */}
             <div className="col-span-2 flex flex-col items-center justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3">
