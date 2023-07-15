@@ -62,7 +62,7 @@ export const clientWorks = [
   {
     title:"Motion Design Reel",
     img:fix,
-    link:"",
+    link:"https://www.youtube.com/embed/S2Xa6E9ihz0",
     type:"Motion Design",
     tag:"Motion Designer"
   },
