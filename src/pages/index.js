@@ -17,6 +17,7 @@ import Testimionals from "@/components.js/Testimonials.jsx";
 import FAQSection from "@/components.js/FAQSection";
 import TransitionEffect from "@/components.js/TransitionEffect";
 import FeaturedProjects from "@/components.js/FeaturedProjects";
+import Banner from "../../public/images/Banner.mp4";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,14 @@ export default function Home() {
       <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
         <Layout className="pt-0 md:pt-16 sm:pt-8">
           <div className="flex items-center justify-between w-full lg:flex-col md:justify-between">
+            <video
+              className="shadow-[20px_20px_rgba(255,255,255)] absolute w-screen h-screen inset-0 top-20 -z-10 lg:hidden"
+              muted
+              loop
+              autoPlay
+            >
+              <source src={Banner} type="video/mp4" />
+            </video>
             <div className="w-1/2 md:w-full">
               {/* image */}
               <Image
@@ -87,7 +96,7 @@ export default function Home() {
           </div>
 
           {/* Featured Projects */}
-          <FeaturedProjects/>
+          <FeaturedProjects />
 
           {/* Testimionals */}
           <div>
