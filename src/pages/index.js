@@ -16,6 +16,7 @@ import Bulb2dark from "/public/images/Bulb2Dark.png";
 import Testimionals from "@/components.js/Testimonials.jsx";
 import FAQSection from "@/components.js/FAQSection";
 import TransitionEffect from "@/components.js/TransitionEffect";
+import FeaturedProjects from "@/components.js/FeaturedProjects";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -84,6 +85,9 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Featured Projects */}
+          <FeaturedProjects/>
 
           {/* Testimionals */}
           <div>

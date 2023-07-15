@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import CountryCode from "../data/countrycode.json";
 import emailJs from "@emailjs/browser";
 import { toast } from "react-hot-toast";
+import { contactUsEmail } from "./contactFormRes";
 
 const ContactMe = () => {
   const {
@@ -15,45 +16,43 @@ const ContactMe = () => {
   const submitContactForm = async (data) => {
     const { countrycode, email, firstName, lastName, message, phoneNo } = data;
 
-    const toastId = toast.loading("Loading...")
-    emailJs.send(
+    const toastId = toast.loading("Loading...");
+    emailJs
+      .send(
+        "gmail",
         "service_kh126n8",
         "template_ka5nqeq",
-        {
-          from_name: `${firstName} ${lastaName}`,
-          to_name: "Diago",
-          email_id: email,
-          message: `<h1>Message Received</h1>
-          <p>${countrycode} - ${phoneNo}</p>
-          <p>${message}</p>
-        `,
-        },
+        contactUsEmail(  email,
+          firstName,
+          lastName,
+          message,
+          phoneNo,
+          countrycode),
         "Lr3ymNFSZg_9lhZmA"
       )
       .then(() => {
         toast.success("Message Sent Successfully!!");
-        setValue("email","")
-        setValue("firstName","")
-        setValue("lastName","")
-        setValue("phoneNo","")
-        setValue("message","")
+        setValue("email", "");
+        setValue("firstName", "");
+        setValue("lastName", "");
+        setValue("phoneNo", "");
+        setValue("message", "");
       })
       .catch((error) => {
         toast.error("Something Went Wrong.");
-        setValue("email","")
-        setValue("firstName","")
-        setValue("lastName","")
-        setValue("phoneNo","")
-        setValue("message","")
+        setValue("email", "");
+        setValue("firstName", "");
+        setValue("lastName", "");
+        setValue("phoneNo", "");
+        setValue("message", "");
       });
 
-      toast.dismiss(toastId);
+    toast.dismiss(toastId);
   };
 
-
   return (
-    <form
-      onSubmit={handleSubmit(submitContactForm)}
+    <form action="https://formsubmit.co/workwithdiago@gmail.com" method="POST"
+      // onSubmit={handleSubmit(submitContactForm)}
       className="flex flex-col gap-7"
       // variants={quote} initial="initial" whileInView="animate"
     >
