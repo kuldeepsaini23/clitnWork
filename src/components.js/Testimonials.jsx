@@ -27,7 +27,7 @@ const Data = [
   {
     img:test2,
     name: "Mutants Gym",
-    profession: "Youtber",
+    profession: "GYM Owner",
     description:
       "The Mutants gym intro blew me away! Its dynamic motion design perfectly captures the raw energy and strength of the gym. It's an electrifying start that fuels my motivation every time!",
     value: 5,

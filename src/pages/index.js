@@ -80,7 +80,7 @@ export default function Home() {
                   className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light md:text-base"
                   href="/contact"
                 >
-                  Conatct Me
+                  Contact Me
                 </Link>
               </div>
             </div>
