@@ -33,10 +33,11 @@ export default function Home() {
         <Layout className="pt-0 md:pt-16 sm:pt-8">
           <div className="flex items-center justify-between w-full lg:flex-col md:justify-between">
             <video
-              className="shadow-[20px_20px_rgba(255,255,255)] absolute w-screen h-screen inset-0 top-20 -z-10 lg:hidden"
+              className="shadow-[20px_20px_rgba(255,255,255)] absolute w-screen h-screen inset-0 top-20 -z-10 lg:hidden !blur-sm opacity-60"
               muted
               loop
               autoPlay
+              style={{ filter: "brightness(0.8) contrast(1.3) saturate(1.3)" }}
             >
               <source src={Banner} type="video/mp4" />
             </video>
