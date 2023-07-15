@@ -33,7 +33,7 @@ export default function Home() {
         <Layout className="pt-0 md:pt-16 sm:pt-8">
           <div className="flex items-center justify-between w-full lg:flex-col md:justify-between">
             <video
-              className="shadow-[20px_20px_rgba(255,255,255)] absolute w-screen h-screen inset-0 top-20 -z-10 lg:hidden !blur-sm opacity-60 dark:shadow-[20px_20px_rgba(0,0,0)] object-cover"
+              className="shadow-[20px_20px_rgba(255,255,255)] absolute w-screen h-screen inset-0 top-20 -z-10 !blur-sm opacity-60 dark:shadow-[20px_20px_rgba(0,0,0)] object-cover"
               muted
               loop
               autoPlay

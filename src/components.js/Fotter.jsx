@@ -14,7 +14,7 @@ const Fotter = () => {
           </span>{" "}
           by&nbsp;{" "}
           <Link
-            href="https://www.linkedin.com/feed/"
+            href="https://www.instagram.com/kuldeepsaini_23/"
             className="underline underline-offset-2 dark:text-primaryDark"
             target={"_blank"}
           >
