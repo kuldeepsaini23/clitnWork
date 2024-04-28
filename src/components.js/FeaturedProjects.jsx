@@ -2,7 +2,8 @@ import AnimatedText from "@/components.js/AnimatedText";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import project1 from "../../public/images/projects/Paypal.png";
+import project1 from "../../public/images/projects/second.webp";
+import project2 from "../../public/images/projects/six.webp";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -10,7 +11,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { BsYoutube } from "react-icons/bs";
 import { Mousewheel, Autoplay, Pagination, Navigation } from "swiper";
 
-import knowledge from "/public/images/projects/Knowledge.png";
 
 const FeaturedProject = ({ type, title, summary, img, link }) => {
   return (
@@ -81,7 +81,7 @@ const FeaturedProjects = () => {
           grabCursor={true}
           spaceBetween={30}
           navigation={true}
-          mousewheel={true}
+          // mousewheel={true}
           pagination={{
             clickable: true,
           }}
@@ -91,9 +91,9 @@ const FeaturedProjects = () => {
         >
           <SwiperSlide>
             <FeaturedProject
-              title="PAYPAL MOTION DESIGN INTRO"
+              title="Client Faiz Warsani YT Video 1"
               img={project1}
-              summary="Experience the seamless convenience of PayPal with our captivating motion design video. Delight in the fluid animations, vibrant colors, and dynamic visuals that illustrate how PayPal simplifies your online transactions, making it easier than ever to pay, shop, and send money securely."
+              summary="Faiz messaged me on twitter that he want a youtube video edit but a high quality edit and I was like yeah lets do a quick 1 min sample it'll be better for you to get about the service. He said sure! This is a youtube video I edited for Faiz Warsani and he was amazed by the quality of the video, his viewers were amazed too! Watch the video and tell me how is it?"
               link="https://www.youtube.com/embed/yisevMxtl30"
               type="Featured Project"
             />
@@ -101,9 +101,9 @@ const FeaturedProjects = () => {
 
           <SwiperSlide>
             <FeaturedProject
-              title="Sample Youtube Video for Knowledge Channels"
-              img={knowledge}
-              summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
+              title="Brian Jung Short Form Edit"
+              img={project2}
+              summary="Applied for video editor position to work with Brian Jung. He asked me to make a sample edit for him and here's the edit. Its a short form video consists of visual effects and stunning animations + the sound effects are crazy af. Watch the video and tell me how is it?"
               link="https://www.youtube.com/embed/rFBK_FYzzvk"
               type="Featured Project"
             />

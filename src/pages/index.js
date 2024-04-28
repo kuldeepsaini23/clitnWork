@@ -44,17 +44,19 @@ export default function Home() {
             <div className="w-1/2 md:w-full">
               {/* image */}
               <Image
-                src={profilePic}
+                src={`https://i.ibb.co/mHXqGMp/20231227-143221.jpg`}
                 alt="Diago"
-                className="w-full h-auto dark:!hidden"
+                width={400}
+                height={200}
+                className="w-[200px] h-[200px] rounded-full object-cover self-end mx-auto"
                 priority
               />
-              <Image
+              {/* <Image
                 src={profilePicDark}
                 alt="Diago"
                 className="w-full h-auto dark:inline-block hidden"
                 priority
-              />
+              /> */}
             </div>
 
             {/* text */}

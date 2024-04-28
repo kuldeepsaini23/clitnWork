@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import test1 from "/public/images/Test1.jpg"
-import test2 from "/public/images/Test2.png"
+import test2 from "/public/images/Test2.jpg"
 import test3 from "/public/images/Test3.jpeg"
 
 
@@ -26,10 +26,10 @@ const Data = [
   },
   {
     img:test2,
-    name: "Mutants Gym",
-    profession: "GYM Owner",
+    name: "Faiz Warsani",
+    profession: "Entrepreneur and Youtuber",
     description:
-      "The Mutants gym intro blew me away! Its dynamic motion design perfectly captures the raw energy and strength of the gym. It's an electrifying start that fuels my motivation every time!",
+      "Boom! It's doing pretty good for years of no uploads. Very good!! sends a screenshot of yt video stats Look at these numbers G!! People are loving it",
     value: 5,
   },
   {

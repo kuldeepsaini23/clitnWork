@@ -7,30 +7,15 @@ import design from "/public/images/projects/Design.png"
 import fifa from "/public/images/projects/Fifa.png"
 import before from "/public/images/projects/BandA.png"
 import knowledge from "/public/images/projects/Knowledge.png"
+import first from "/public/images/projects/first.webp";
+import second from "/public/images/projects/second.webp";
+import third from "/public/images/projects/third.webp";
+import four from "/public/images/projects/four.webp";
+import five from "/public/images/projects/five.webp";
+import six from "/public/images/projects/six.webp";
 
 
 export const clientWorks = [
-  {
-    title:"PAYPAL MOTION DESIGN INTRO",
-    img:paypal,
-    link:"https://www.youtube.com/embed/yisevMxtl30",
-    type:"Motion Design",
-    tag:"Motion Designer"
-  },
-  {
-    title:"Before and After Edit",
-    img:before,
-    link:"https://www.youtube.com/embed/4i4ghMw82XU",
-    type:"Youtube Project",
-    tag:"Youtube Video"
-  },
-  {
-    title:"Business Company Product Ad",
-    img:business,
-    link:"https://www.youtube.com/embed/nsVPsMFfgfw",
-    type:"Motion Design",
-    tag:"Motion Designer"
-  },
   {
     title:"Sample Youtube Video for Knowledge Channels",
     img:knowledge,
@@ -39,33 +24,54 @@ export const clientWorks = [
     tag:"Youtube Video"
   },
   {
-    title:"Monster Energy Motion Poster",
-    img:monster,
+    title:"Brenden Swank Sample Edit",
+    img:first,
+    link:"https://www.youtube.com/embed/4i4ghMw82XU",
+    type:"Youtube Project",
+    tag:"Youtube Video"
+  },
+  {
+    title:"Client Faiz Warsani YT Video 1",
+    img:second,
+    link:"https://www.youtube.com/embed/nsVPsMFfgfw",
+    type:"Motion Design",
+    tag:"Youtube Video"
+  },
+  {
+    title:"Client Faiz Warsani YT Video 2",
+    img:third,
+    link:"https://www.youtube.com/embed/rFBK_FYzzvk",
+    type:"Youtube Project",
+    tag:"Youtube Video"
+  },
+  {
+    title:"Champ Sample Edit",
+    img:four,
     link:"https://www.youtube.com/embed/Gr8RZJ_Nd1w",
     type:"Motion Design",
-    tag:"Motion Designer"
+    tag:"Youtube Video"
   },
   {
-    title:"RedBull Motion Poster",
-    img:redbull,
+    title:"Client Martin Short Form Edit",
+    img:five,
     link:"https://www.youtube.com/embed/0NqOFlldU1M",
     type:"Motion Design",
-    tag:"Motion Designer"
+    tag:"Youtube Video"
   },
   {
-    title:"Social Media Motion Poster",
-    img:design,
+    title:"Brian Jung Short Form Edit",
+    img:six,
     link:"https://www.youtube.com/embed/1ZXcz-R8qR4",
     type:"Motion Design",
-    tag:"Motion Designer"
+    tag:"Youtube Video"
   },
-  {
-    title:"Motion Design Reel",
-    img:fix,
-    link:"https://www.youtube.com/embed/S2Xa6E9ihz0",
-    type:"Motion Design",
-    tag:"Motion Designer"
-  },
+  // {
+  //   title:"Motion Design Reel",
+  //   img:fix,
+  //   link:"https://www.youtube.com/embed/S2Xa6E9ihz0",
+  //   type:"Motion Design",
+  //   tag:"Motion Designer"
+  // },
   {
     title:"Fifa Highlight Edit",
     img:fifa,

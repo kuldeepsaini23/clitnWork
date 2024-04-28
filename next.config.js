@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['drive.google.com','www.pexels.com', 'images.pexels.com'],
+    domains: ['drive.google.com','www.pexels.com', 'images.pexels.com','i.ibb.co'],
   },
   webpack: (config) => {
     config.module.rules.push({
